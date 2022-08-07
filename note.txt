@@ -1,0 +1,63 @@
+
+1. basic commands in angular
+
+    create project -ng new projectname/ ng new pjctname --routing(not asking routing)
+    run projrct- ng serve -- open
+    create component- ng g c compntname
+
+2. basic concepts
+
+
+
+2.1 component- to create {html css ts} root component-AppComponent  
+2.2 module- to add libraries to the project -root module- AppModule
+2.3 Data binding- data sharing bw html & cs
+
+            2.3.1 one way binding
+
+                component to view- ts to html
+
+                        string interpolation:{{variable name}}-html file, variale name declared in ts file
+                        property binding:[element attribute]="variablename"
+                view to component
+                
+                        event binding:(event)="functioncall()"
+                        event binding using $event:(event)="functioncall($event)"
+                        using template referencing variable-#variablename
+            
+            2.3.2 two way binding
+
+                using ngmodel- import FormsModule in AppModule
+                syntax-[(ngModel)]=variablename 
+
+
+3. to setup path for  component
+
+        approuting.ts->const routes: Routes = [
+         {path:'',component:coponentclassname}];
+
+4. dependency injection: to share data between classes
+
+        constructor(access specifier router:Router)
+        function(){
+          this.router.navigateByUrl("dashboard")
+
+            }
+
+5. Angular Services: for reuse data
+
+6.ngsubmit- to submit entire form. syntax:(ngSubmit)="functioncall"
+
+7.Angular forms:
+
+        7.1: Template Driven Forms:first design html
+        7.2: Model Driven Forms: first create model in ts
+
+                7.2.1 Reactive Forms: Add Validation- Import ReactiveFormsModule-form group-
+                        FormBuilder dependency inject, form array, form control
+
+8. Angular Directives- To manupulate DOM
+
+        8.1: Component Directives
+        8.2: Structural Directives- To Change DOM Structure
+                8.2.1: ngif-Syntax:"*ngif="condition"
